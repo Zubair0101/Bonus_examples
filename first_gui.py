@@ -21,11 +21,10 @@ list_box = sg.Listbox(values=functions.get_todos(),
                       size=(45, 10))
 # The buttons in th GUI
 # Add_button = sg.Button("Add", tooltip='Adds the to-do in the list') # size=10)
-Add_button = sg.Button(key="Add", tooltip='Adds the to-do in the list', image_size=(40, 30), image_source="add.png")
+Add_button = sg.Button("Add", tooltip='Adds the to-do in the list',)
 Edit_button = sg.Button("Edit", key="Edit",
                         tooltip='Edit the to-do in the list', )  # image_size = (40, 30), image_source = "edit.png")
-Remove_button = sg.Button(key="Remove", tooltip='Removes the to-do from list', image_size=(40, 30),
-                          image_source="complete.png")
+Remove_button = sg.Button("Remove", tooltip='Removes the to-do from list')
 Exit_button = sg.Button("Exit", tooltip='Exit the application.', )
 
 layout = [[clock],
