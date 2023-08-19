@@ -5,3 +5,4 @@ Make dinner
 Check up on cats
 Visit friend
 Get Pet food
+Learn Python

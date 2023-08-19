@@ -7,9 +7,9 @@ if not os.path.exists("todos.txt"):
     with open("todos.txt", "w") as file:
         pass
 
-sg.theme("DarkPurple4")
+sg.theme("black")
 clock = sg.Text("", key='clock')
-label = sg.Text("Type in a to-do")
+label = sg.Text("Type in a to-do", text_color="White")
 
 # Input box and output box
 input_box = sg.InputText(tooltip='Enter to-do', key='todo')
@@ -21,21 +21,25 @@ list_box = sg.Listbox(values=functions.get_todos(),
                       size=(45, 10))
 # The buttons in th GUI
 # Add_button = sg.Button("Add", tooltip='Adds the to-do in the list') # size=10)
-Add_button = sg.Button("Add", tooltip='Adds the to-do in the list',)
-Edit_button = sg.Button("Edit", key="Edit",
-                        tooltip='Edit the to-do in the list', )  # image_size = (40, 30), image_source = "edit.png")
+Add_button = sg.Button("Add", tooltip='Adds the to-do in the list', size=7)
+Edit_button = sg.Button("Edit", key="Edit", tooltip='Edit the to-do in the list', size=7)
+# image_size = (40, 30), image_source = "edit.png")
 Remove_button = sg.Button("Remove", tooltip='Removes the to-do from list')
 Exit_button = sg.Button("Exit", tooltip='Exit the application.', )
 
-layout = [[clock],
-          [label],
-          [input_box, Add_button],
-          [list_box, Edit_button, Remove_button],
-          [Exit_button, output]]
+col1 = sg.Column([[clock], [label], [input_box], [list_box]])
+col2 = sg.Column([[Add_button], [Edit_button], [Remove_button]])
+
+layout = [[col1, col2], [Exit_button, output]]
+# layout = [[clock],
+#           [label],
+#           [input_box, Add_button],
+#           [list_box, Edit_button, Remove_button],
+#           [Exit_button, output]]
 
 window = sg.Window('My To-Do App',
                    layout=layout,
-                   font=('Comic sans ms', 15))  # font=('Ink Free', 16))
+                   font=('Segoe ui semibold italic', 16))  # font=('Ink Free', 16))
 # 'LAYOUT=' --> both objects placed in one list aligns them on 1 line
 
 while True:
