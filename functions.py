@@ -24,6 +24,7 @@ def write_todos(task_arg: list, filepath=FILEPATH) -> None:
 
 # print(__name__)
 # print(type(__name__))
+# Used to test the functions
 # if __name__ == "__main__":
 #     print("Hello from Functions.")
 

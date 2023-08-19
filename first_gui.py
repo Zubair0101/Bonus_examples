@@ -11,7 +11,7 @@ sg.theme("DarkPurple4")
 clock = sg.Text("", key='clock')
 label = sg.Text("Type in a to-do")
 
-# Input box
+# Input box and output box
 input_box = sg.InputText(tooltip='Enter to-do', key='todo')
 output = sg.Text(key='output', text_color='lime')
 
